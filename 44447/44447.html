@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- This is the minified production version of parse js -->
+    <script
+      type="text/javascript"
+      src="https://npmcdn.com/parse/dist/parse.min.js"
+    ></script>
+  </head>
+  <body>
+    <h1>JS SDK</h1>
+  </body>
+  <script>
+    // Initialize Parse
+    Parse.initialize("kza8RK6DdjO0fmGSHUnPkNmxOHdftAc9968sVMAM", "Ff7Gs10csMTRqhhs34T3ciPkEE51yV8BaUyrnTDM"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+    Parse.serverURL = "https://parseapi.back4app.com/";
+    async function saveNewPlayer() {
+        //Create your Parse Object
+        const soccerPlayers = new Parse.Object("SoccerPlayers");
+
+        //Define its attributes
+        soccerPlayers.set("playerName", "A. Wed");
+        soccerPlayers.set("yearOfBirth", 1997);
+        soccerPlayers.set("emailContact", "a.wed@email.io");
+        soccerPlayers.set("attributes", ["fast","good conditioning"])
+        try{
+            //Save the Object
+            let result = await soccerPlayers.save()
+            alert('New object created with objectId: ' + result.id);
+        }catch(error){
+            alert('Failed to create new object, with error code: ' + error.message);
+        }
+    } 
+  </script>
+  
+</html>
