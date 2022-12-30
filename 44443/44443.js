@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
     async function saveNewPlayer() {
         //Create your Parse Object
         const soccerPlayers = new Parse.Object("SoccerPlayers");
@@ -16,7 +16,6 @@ $(document).ready(function(){
             alert('Failed to create new object, with error code: ' + error.message);
         }
     } 
-});
 
 
 
