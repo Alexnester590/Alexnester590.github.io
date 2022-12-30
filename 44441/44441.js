@@ -1,4 +1,4 @@
-$(document).ready(async function(){
+$(document).ready(function(){
     async function saveNewPlayer() {
         //Create your Parse Object
         const soccerPlayers = new Parse.Object("SoccerPlayers");
